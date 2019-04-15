@@ -15,6 +15,7 @@ RUN apt -y install ffmpeg cmake build-essential git \
 
 # Install DeepFaceLab Python Dependencies
 COPY requirements-cuda.txt /opt/
+RUN python3 -m  pip install --upgrade pip
 RUN python3.6 -m pip install -r /opt/requirements-cuda.txt && rm /opt/requirements-cuda.txt
 
 RUN python3.6 -m pip install dlib
